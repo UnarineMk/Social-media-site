@@ -7,19 +7,27 @@
   text-decoration: none;
 }
 :root {
+  --darker-color-lightness: 17%;
+  --dark-color-lightness: 95%;
+  --white-color-lightness: 100%;
+  --primary-color-hue: 268;
+
   --padding-left: 50px;
   --padding-right: 50px;
-  --light-purple: rgb(142, 71, 223);
-  --light-purple-hover: rgba(115, 115, 247, 0.616);
-  --light-pink: rgb(247, 115, 230);
-  --light-red: rgb(247, 115, 115);
-  --light-yellow: rgb(247, 227, 115);
-  --light-green: rgb(126, 247, 115);
-  --white: white;
-  --light-grey: rgb(173, 173, 173);
-  --lighter-grey: rgba(207, 209, 211, 0.897);
-  --dark-purple: rgb(33, 0, 71);
-  --darker-purple: rgb(18, 0, 37);
+  --light-purple: hsl(var(--primary-color-hue), 70%, 58%);
+  --light-purple2: hsl(268, 70%, 58%);
+  --light-purple-hover: hsla(240, 89%, 71%, 0.616);
+  --light-pink: hsl(308, 70%, 58%);
+  --light-red: hsl(0, 70%, 58%);
+  --light-yellow: hsl(51, 70%, 58%);
+  --light-green: hsl(115, 70%, 58%);
+  --white: hsl(252, 30%, var(--white-color-lightness));
+  --light-grey: hsl(0, 0%, 65%);
+  --lighter-grey: rgb(207, 209, 211);
+
+  --light-color: hsl(252, 30%, var(--dark-color-lightness));
+  --dark-purple: hsl(252, 30%, var(--darker-color-lightness));
+  --darker-purple: hsl(252, 30%, 10%);
 
   --btn-paading: 0.2rem 0.5rem;
   --fixed-top-left: 5rem;
@@ -33,17 +41,17 @@
 body {
   text-decoration: none;
   color: black;
-  background-color: rgb(207, 209, 211);
+  background-color: var(--light-color);
 }
 a {
   text-decoration: none;
 }
 
 h5 {
-  color: black;
+  color: var(--dark-purple);
 }
 h4 {
-  color: black;
+  color: var(--dark-purple);
 }
 
 img {
@@ -65,6 +73,7 @@ img {
 .navbar {
   padding-left: var(--padding-left);
   padding-right: var(--padding-right);
+  background-color: var(--white);
 }
 
 .navbar-nav {
@@ -83,7 +92,7 @@ img {
 }
 .decline-button {
   border: none;
-  background-color: var(--light-red);
+  background-color: var(--light-grey);
   border-radius: 1.5rem;
   align-items: center;
   width: auto;
@@ -116,7 +125,7 @@ img {
 .search-input {
   border: none;
   margin-left: 3.5px;
-  background: gainsboro;
+  background: var(--light-color);
   border-radius: var(--border-radius);
   padding: 5px;
 }
@@ -174,12 +183,12 @@ main .container .left .profile {
 
 .left h6 {
   font-size: 16px;
-  color: black;
+  color: var(--dark-purple);
 }
 
 .left p {
   font-size: 12px;
-  color: black;
+  color: var(--dark-purple);
 }
 
 .left-sidebar {
@@ -201,13 +210,13 @@ main .container .left .profile {
 }
 
 .left .sidebar .left-sidebar-items:hover {
-  background-color: gainsboro;
+  background-color: var(--light-grey);
   z-index: auto;
 }
 
 .left .sidebar i {
   font-size: 1.4rem;
-  color: var(--light-grey);
+  color: var(--light-color);
   margin-left: 2rem;
   position: relative;
   align-self: auto;
@@ -244,6 +253,7 @@ main .container .left .profile {
 .left .sidebar h4 {
   margin-left: 1rem;
   font-size: 1rem;
+  color: var(--dark-purple);
 }
 
 .left .sidebar .home-radius .active {
@@ -352,7 +362,7 @@ main .container .left .profile {
   padding: 0.9rem;
   box-shadow: 0 2rem hsl(var(--light-purple), 75%, 60%);
   z-index: 8;
-  color: black;
+  color: var(--dark-purple);
 }
 
 .left .notify_pop_up::before {
@@ -360,7 +370,7 @@ main .container .left .profile {
   width: 1.2rem;
   height: 1.2rem;
   display: block;
-  background: rgb(255, 255, 255);
+  background: var(--white);
   position: absolute;
   top: 1.6rem;
   left: -0.5rem;
@@ -378,7 +388,7 @@ main .container .left .profile {
 
 .left .notify_pop_up small {
   display: block;
-  color: GREY;
+  color: var(--dark-purple);
 }
 
 /* ===================Middle Section============ */
@@ -397,7 +407,7 @@ main .container .left .profile {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: var(--white);
+  color: rgb(243, 243, 243);
   font-size: 0.7rem;
   width: 100%;
   position: relative;
@@ -471,7 +481,7 @@ main .container .left .profile {
   justify-self: start;
   width: 50%;
   background: transparent;
-  color: grey;
+  color: var(--dark-purple);
   margin-right: 2rem;
   margin-left: -2rem;
 }
@@ -484,6 +494,7 @@ main .container .left .profile {
   padding: 15px;
   margin: 0.9rem 0;
   font-size: 0.7rem;
+  color: var(--dark-purple);
   line-height: 0.7rem;
 }
 
@@ -629,14 +640,14 @@ main .right-section {
 
 .light-text {
   font-weight: 100;
-  color: var(--light-grey);
+  color: var(--dark-purple);
 }
 .bolder-text {
   font-weight: bolder;
 }
 
 .right-section .requests {
-  color: var(--light-purple);
+  color: var(--light-color);
 }
 
 /* friend request */
@@ -648,11 +659,11 @@ main .right-section {
 
 .right-section .friend-request h4 {
   margin: 1rem 0;
-  color: var(--light-grey);
+  color: var(--light-color);
 }
 .right-section .friend-request p {
   margin: 1rem 0;
-  color: var(--light-grey);
+  color: var(--dark-purple);
 }
 
 .right-section .friend-request .request {
@@ -677,7 +688,7 @@ main .right-section {
 /* ===============Theme Customization============================ */
 
 .customize-theme {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--light-color);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -689,6 +700,7 @@ main .right-section {
   place-items: center;
   font-size: 0.9rem;
   display: none;
+  opacity: 0.9;
 }
 
 .customize-theme .card-theme {
@@ -696,6 +708,7 @@ main .right-section {
   padding: 3rem;
   border-radius: var(--border-radius);
   width: 50%;
+  box-shadow: 0 0 0.6rem var(--light-purple);
 }
 
 /* font-size */
@@ -756,7 +769,7 @@ main .right-section {
 }
 
 .customize-theme .choose-color span:nth-child(1) {
-  background: var(--light-purple);
+  background: var(--light-purple2);
 }
 .customize-theme .choose-color span:nth-child(2) {
   background: var(--light-green);
@@ -772,7 +785,7 @@ main .right-section {
 }
 
 .customize-theme .choose-color span.active {
-  border: 5px solid white;
+  border: 5px solid rgb(204, 203, 203);
 }
 
 /* Background */
@@ -846,6 +859,9 @@ main .right-section {
   .left .btn {
     display: none;
   }
+  .customize-theme .card-theme {
+    width: 80vw;
+  }
 }
 
 /* CSS MEDIA QUERIES SMARTPHONES AND Small tablets*/
@@ -897,5 +913,8 @@ main .right-section {
 @media only screen and (min-width: 1440px) {
   .feeds-image {
     height: 26rem;
+  }
+  .customize-theme .card-theme {
+    width: 90vw;
   }
 }

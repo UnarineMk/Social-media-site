@@ -16,15 +16,14 @@ const fontSizes = document.querySelectorAll(".choose-size span");
 const root = document.querySelector(":root");
 const colorPlatte = document.querySelectorAll(".choose-color span");
 
+const bg0 = document.querySelector(".bg-0");
 const bg1 = document.querySelector(".bg-1");
 const bg2 = document.querySelector(".bg-2");
 const bg3 = document.querySelector(".bg-3");
 
-
 let lightColorLightness;
 let darkColorLightness;
 let darkerColorLightness;
-
 
 //===========================Functions==================================
 
@@ -34,7 +33,6 @@ const changeActiveItem = () => {
     item.classList.remove("active");
   });
 };
-
 
 // Open Modal
 const openModal = () => {
@@ -53,6 +51,7 @@ const changeActiveClass = () => {
   colorPlatte.forEach((colorPick) => {
     colorPick.classList.remove("active");
   });
+};
 
 // change bg
 const changeBg = () => {
@@ -61,14 +60,15 @@ const changeBg = () => {
   root.style.setProperty("--darker-color-lightness", darkerColorLightness);
 };
 
+// changing active classes
+const addActive = (bg) => {
+  bg.classList.add("active");
+};
 
-
-
-
+const removeActive = (bg) => {
+  bg.classList.remove("active");
+};
 // =========================FOR EACH AND ADDEVENLISTERNERS=================
-
-
-
 
 menuItems.forEach((item) => {
   item.addEventListener("click", () => {
@@ -94,7 +94,6 @@ MessageNotify.addEventListener("click", () => {
   }, 2000);
 });
 
-
 // Theme Customization
 themeModal.addEventListener("click", closeModal);
 theme.addEventListener("click", openModal);
@@ -103,7 +102,7 @@ theme.addEventListener("click", openModal);
 
 const buttons = (pexels) => {
   primaryButton.forEach((btn) => {
-    btn.style.fontSize = pexels
+    btn.style.fontSize = pexels;
   });
 };
 fontSizes.forEach((size) => {
@@ -121,16 +120,17 @@ fontSizes.forEach((size) => {
       fontSize = "13px";
       root.style.setProperty("--fixed-top-left", "5.4rem");
       root.style.setProperty("--fixed-top-right", "-7rem");
+      mainContainer.style.marginTop = "20px";
     } else if (size.classList.contains("font-size-3")) {
       fontSize = "16px";
       root.style.setProperty("--fixed-top-left", "-2rem");
       root.style.setProperty("--fixed-top-right", "-17rem");
     } else if (size.classList.contains("font-size-4")) {
-      fontSize = "19px";
+      fontSize = "17px";
       root.style.setProperty("--fixed-top-left", "-5rem");
       root.style.setProperty("--fixed-top-right", "-25rem");
     } else if (size.classList.contains("font-size-5")) {
-      fontSize = "20px";
+      fontSize = "18px";
       root.style.setProperty("--fixed-top-left", "-12rem");
       root.style.setProperty("--fixed-top-right", "-35rem");
     }
@@ -140,9 +140,6 @@ fontSizes.forEach((size) => {
     document.querySelector("html").style.fontSize = fontSize;
   });
 });
-};
-
-
 
 // changing Primary colours
 colorPlatte.forEach((color) => {
@@ -167,38 +164,39 @@ colorPlatte.forEach((color) => {
   });
 });
 
-
-
-
 // ==========================background=============================
 
+bg0.addEventListener("click", () => {
+  darkerColorLightness = "75%";
+  darkColorLightness = "95%";
+  lightColorLightness = "100%";
+  addActive(bg0);
+  removeActive(bg1);
+  removeActive(bg2);
+  removeActive(bg3);
+  changeBg();
+  window.location.reload();
+});
 
 bg1.addEventListener("click", () => {
-  darkerColorLightness = "95%";
-  darkColorLightness = "20%";
-  lightColorLightness = "15%";
-
-  // add active class
-  bg1.classList.add(".active");
-
-  // remove class
-  bg2.classList.remove(".active");
-  bg3.classList.remove(".active");
-
-  window.location.reload();
+  darkerColorLightness = "75%";
+  darkColorLightness = "95%";
+  lightColorLightness = "100%";
+  addActive(bg1);
+  removeActive(bg0);
+  removeActive(bg2);
+  removeActive(bg3);
+  changeBg();
 });
 
 bg2.addEventListener("click", () => {
   darkerColorLightness = "95%";
   darkColorLightness = "20%";
   lightColorLightness = "15%";
-
-  // add active class
-  bg2.classList.add(".active");
-
-  // remove class
-  bg1.classList.remove(".active");
-  bg3.classList.remove(".active");
+  addActive(bg2);
+  removeActive(bg0);
+  removeActive(bg1);
+  removeActive(bg3);
   changeBg();
 });
 
@@ -206,18 +204,12 @@ bg3.addEventListener("click", () => {
   darkerColorLightness = "95%";
   darkColorLightness = "10%";
   lightColorLightness = "0%";
-
-  // add active class
-  bg3.classList.add(".active");
-
-  // remove class
-  bg1.classList.remove(".active");
-  bg2.classList.remove(".active");
+  addActive(bg3);
+  removeActive(bg0);
+  removeActive(bg1);
+  removeActive(bg2);
   changeBg();
 });
-
-
-
 
 // =====================================Error Codes====================================
 

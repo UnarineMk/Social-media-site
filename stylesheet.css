@@ -49,9 +49,7 @@ a {
 
 h5 {
   color: var(--dark-purple);
-}
-h4 {
-  color: var(--dark-purple);
+  font-size: 18px;
 }
 
 img {
@@ -62,7 +60,7 @@ img {
   padding: var(--btn-paading);
   display: inline-block;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .btn:hover {
@@ -70,10 +68,17 @@ img {
   background-color: var(--light-purple-hover);
 }
 
+.nav-bar-cl {
+  background-color: var(--white);
+}
+
+.weSocial-color {
+  color: var(--dark-purple);
+  font-size: 22px;
+}
 .navbar {
   padding-left: var(--padding-left);
   padding-right: var(--padding-right);
-  background-color: var(--white);
 }
 
 .navbar-nav {
@@ -483,7 +488,6 @@ main .container .left .profile {
   background: transparent;
   color: var(--dark-purple);
   margin-right: 2rem;
-  margin-left: -2rem;
 }
 
 /* =====================================Feeds========================================= */
@@ -597,6 +601,7 @@ main .right-section {
   border-bottom: 4px solid gainsboro;
   padding-bottom: 0.5rem;
   font-size: 0.8rem;
+  color: var(--dark-purple);
   font-weight: bolder;
 }
 
@@ -643,7 +648,8 @@ main .right-section {
   color: var(--dark-purple);
 }
 .bolder-text {
-  font-weight: bolder;
+  font-weight: 600;
+  color: var(--dark-purple);
 }
 
 .right-section .requests {
@@ -659,10 +665,12 @@ main .right-section {
 
 .right-section .friend-request h4 {
   margin: 1rem 0;
-  color: var(--light-color);
+  color: var(--dark-purple);
+  font-size: 20px;
 }
 .right-section .friend-request p {
   margin: 1rem 0;
+  font-size: 14px;
   color: var(--dark-purple);
 }
 
@@ -844,8 +852,10 @@ main .right-section {
     width: 96%;
   }
   main .container {
+    margin-top: 30px;
     grid-template-columns: 5rem auto 30vw;
-    gap: 0.2rem;
+    gap: 1rem;
+    margin-left: -10px;
   }
 
   main .container .left .profile {
@@ -862,16 +872,52 @@ main .right-section {
   .customize-theme .card-theme {
     width: 80vw;
   }
+  .links-creator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    column-gap: 200px;
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .links {
+    align-self: center;
+    color: var(--dark-purple);
+    margin-right: 20px;
+  }
+
+  .link-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 600px;
+  }
+  .creator {
+    width: 300px;
+  }
+  .my-website {
+    font-weight: 600;
+  }
+
+  .footer {
+    background-color: var(--white);
+    margin-top: 40px;
+    width: 100%;
+  }
 }
 
 /* CSS MEDIA QUERIES SMARTPHONES AND Small tablets*/
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 716px) {
   .navbar-nav .search-item {
     display: none;
   }
 
   main .container {
     grid-template-columns: 0 auto 5rem;
+    margin-left: 5px;
   }
 
   main .container .left {
@@ -908,6 +954,41 @@ main .right-section {
   main .container .right-section {
     display: none;
   }
+  .links-creator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    column-gap: 200px;
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .links {
+    align-self: center;
+    color: var(--dark-purple);
+    margin-right: 20px;
+  }
+
+  .link-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+  .creator {
+    width: 300px;
+  }
+  .my-website {
+    font-weight: 600;
+  }
+
+  .footer {
+    background-color: var(--white);
+    margin-top: 40px;
+    width: 150%;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -917,4 +998,36 @@ main .right-section {
   .customize-theme .card-theme {
     width: 90vw;
   }
+}
+
+.links-creator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.1rem;
+  width: 50%;
+  align-self: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 70px;
+}
+
+.links {
+  align-self: center;
+  color: var(--dark-purple);
+}
+
+.my-website {
+  font-weight: 600;
+}
+
+.footer {
+  background-color: var(--white);
+  margin-top: 40px;
+}
+
+.link-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 60px;
 }
